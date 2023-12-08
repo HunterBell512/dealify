@@ -29,6 +29,7 @@ async function getGameInfo (name) {
     const res = await fetch(url);
     gameData = await res.json();
 
+    // log the response
     console.log(gameData);
     return gameData;
 }
