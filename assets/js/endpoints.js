@@ -18,3 +18,17 @@ async function getGameDeals (search) {
     console.log(gameData);
     return gameData;
 }
+
+// function to get game information from API RAWG
+async function getGameInfo (name) {
+    let key = '88c319ac8d934bfc9278191a57ae1fe4'; // API KEY for RAWG
+    let url = `https://api.rawg.io/api/games/${name.replace(' ', '-')}?key=${key}`;
+    let gameData = '';
+
+    // fetch 
+    const res = await fetch(url);
+    gameData = await res.json();
+
+    console.log(gameData);
+    return gameData;
+}
