@@ -1,7 +1,7 @@
 var searchBar = document.getElementById('searchbar');
 var searchBtn = document.getElementById('searchbtn');
 
-function searchFunction(event){
+function searchFunction(event) {
     event.preventDefault();
 
     //searchBar.value === what is typed.
@@ -10,16 +10,15 @@ function searchFunction(event){
 
     //Gets the current search history
     var searchHistory = getSearchHistory();
-    //adds new searched item to history. Change (searchBar.value) 
+    //adds new searched item to history. Change (searchBar.value)
     //to whatver you want saved into history
     searchHistory.unshift(searchBar.value);
     //saves recent 5 searches. Change number for most recent
-    searchHistory = searchHistory.slice(0,5);
+    searchHistory = searchHistory.slice(0, 5);
     //saves search History
     localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
-    
 }
-function getSearchHistory(){
+function getSearchHistory() {
     var searchHistory = localStorage.getItem('searchHistory');
     return searchHistory ? JSON.parse(searchHistory) : [];
 }
