@@ -16,6 +16,8 @@ function closeContactModal() {
 openContactModalBtn.addEventListener('click', openContactModal);
 closeContactModalBtn.addEventListener('click', closeContactModal);
 
+
+
 var wishlistModal = document.getElementById('wishlistModal');
 var openWishlistModalBtn = document.getElementById('wishlistBtn');
 var closeWishlistModalBtn = document.getElementById('closeWishlist');
@@ -33,3 +35,6 @@ function closeWishlistModal() {
 // event listeners to open and close wishlist modal
 openWishlistModalBtn.addEventListener('click', openWishlistModal);
 closeWishlistModalBtn.addEventListener('click', closeWishlistModal);
+
+
+
