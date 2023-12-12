@@ -17,7 +17,18 @@
       <nav class="menu has-text-right block">
         <ul class="menu-list">
           <li><a href="#">Recent Searches</a></li>
-          <li><a href="#">Wishlist</a></li>
+          <li> 
+            <button id="wishlistBtn" onclick="openWishlistModal()">Wishlist</button>
+            <div class="modal" id="wishlistModal">
+                  <div class="modal-content" id="wishlistContent">
+                    <span class="close-wishlist-modal" id="closeWishlist" onclick="closeWishlistModal()">&times;</span>
+                   <p>Your saved games.</p>
+                  </div>
+                  
+                </div>
+            
+            
+          </li>
         </ul>
       </nav>
     </header>
@@ -30,20 +41,22 @@
               <input class="input is-rounded" id='searchbar' type="text" placeholder="Which game?">
             </div>
             <div class="control">
-              <button class="button is-primary is-rounded" id="searchbtn" type="submit">Search</button>
+              <button class="button is-primary is-rounded" id="" id="searchbtn" type="submit">Search</button>
             </div>
           </form>
         </div>
       </div>
+     
+        </div>
     </section>
     <!-- Footer -->
     <footer class="footer">
       <div class="content has-text-centered">
         <p>Authors: HunterBell512, DanielJutila, CallBeyond, Vermello25</p>
-        <button id="contactBtn" onclick="openmodal()">Contact Us</button>
+        <button id="contactBtn" onclick="openContactModal()">Contact Us</button>
         <div class="modal" id="contactModal">
-          <div class="modal-content">
-            <span class="close-modal">&times;</span>
+          <div class="modal-content" id="contactUsContent">
+            <span class="close-modal" id="closeContact" onclick="closeContactModal()">&times;</span>
             <p>Thank You for visiting our website. If you would like to contact us, you can use one of the means below.</p>
             <ul>
               <li><a href="https://github.com/HunterBell512">HunterBell512</a></li>
@@ -51,41 +64,17 @@
               <li><a href="https://github.com/CallBeyond">CallBeyond</a></li>
               <li><a href="https://github.com/Vermello25">Vermello25</a></li>
             </ul>
-        </nav>
-       
-     </header>
+          </div> 
+       </div>
+      </div>
+    </footer>   
     
     <body>
-        <h2>Save money buying games you cheapskates.</h2>
-         <form class="searchform">
-            <input type="text" id="searchbar" placeholder="Search Bar" required>
-            <input type="submit" id="searchbtn" value="Search"></button>
-        </form>
+       
 
-        <footer>
-            <ul>
-                <li>Authors: HunterBell512, DanielJutila, CallBeyond, Vermello25 </li>
-                <!--Was thinking we could do a modal for contact us, have it pop up with each of our contact info and links to our github.-->
-                <li>
-                    <!--I think we should use css to hide the button in the "Contact Us" text.-->
-                    <button id="contactBtn" onclick="openmodal()">Contact Us</button>
-                    <div class="modal" id="contactModal">
-                        <div class="modal-content">
-                            <span class="close-modal">&times;</span>
-                            <p>Thank You for visiting our website. If you would like to contact us you can use one of the means below.</p>
-                            <ul>
-                                <li><a href="https://github.com/HunterBell512">HunterBell512></a></li>
-                                <li><a href="https://github.com/DanielJutila">DanielJutila></a></li>
-                                <li><a href="https://github.com/CallBeyond">CallBeyond</a></li>
-                                <li><a href="https://github.com/Vermello25">Vermello25</a></li>
-                            </ul>
-                        </div>
-                    </div>    
-                </li> 
-            </ul>
-        </footer>
         <script src="./assets/js/searchFunction.js"></script>
         <script src="./assets/js/saveWishlist.js"></script>
         <script src="./assets/js/endpoints.js"></script>
+        <script src="./assets/js/modals.js"></script>
     </body>
 </html>
