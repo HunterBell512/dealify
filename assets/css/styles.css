@@ -1,0 +1,39 @@
+
+/* Centering the search form */
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this for the desired height */
+}
+
+nav {
+  background-color: aquamarine;
+  padding: 0;
+  font-size: 13px;
+  text-align: center; /* Center-align text */
+  font-family: 'Noto Sans TC', sans-serif;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#navbarTitle {
+  color: rgb(9, 201, 105);
+  font-size: 36px;
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;  
+  padding: 0;
+}
+
+.form {
+  align-items: center;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 0.5%;
+  width: 100%;
+  background-color: rgba(228, 228, 228, 0.664);
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
