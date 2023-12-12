@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,47 @@
         <title>Dealify</title>
     </head>
 
+  <body>
     <header>
-        <h1>Dealify</h1>
-        <nav>
+      <h1 class="title is-1 has-text-centered">
+        DEALIFY
+      </h1>
+      <nav class="menu has-text-right block">
+        <ul class="menu-list">
+          <li><a href="#">Recent Searches</a></li>
+          <li><a href="#">Wishlist</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="section">
+      <div class="container">
+        <div class="content right-aligned">
+          <h2>Save money buying games you cheapskates.</h2>
+          <form class="field has-addons searchform">
+            <div class="control">
+              <input class="input is-rounded" type="text" placeholder="Which game?">
+            </div>
+            <div class="control">
+              <button class="button is-primary is-rounded" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>Authors: HunterBell512, DanielJutila, CallBeyond, Vermello25</p>
+        <button id="contactBtn" onclick="openmodal()">Contact Us</button>
+        <div class="modal" id="contactModal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <p>Thank You for visiting our website. If you would like to contact us, you can use one of the means below.</p>
             <ul>
-                <li>Recent Searches</li>
-                <li>Wishlist</li>
+              <li><a href="https://github.com/HunterBell512">HunterBell512</a></li>
+              <li><a href="https://github.com/DanielJutila">DanielJutila</a></li>
+              <li><a href="https://github.com/CallBeyond">CallBeyond</a></li>
+              <li><a href="https://github.com/Vermello25">Vermello25</a></li>
             </ul>
         </nav>
        

@@ -1,0 +1,41 @@
+/* styles.css */
+
+/* Targeting the h1 with the title class */
+h1.title {
+  color: green; /* Set title color to red */
+  font-size: 3em; /* Adjust font size */
+  text-align: center; /* Center-align text */
+  font-family: 'Noto Sans TC', sans-serif;}
+
+/* Styling the navigation menu */
+.menu {
+  text-align: left; /* Align menu items to the right */
+}
+
+.menu-list li {
+  display: inline-block; /* Display menu items inline */
+  margin-right: 15px; /* Add space between menu items */
+}
+
+/* Style the search form */
+.searchform {
+  display: flex; /* Display form items in a row */
+  justify-content: center; /* Center-align form items */
+  margin-top: 20px; /* Add space between header and form */
+}
+
+.searchform input[type="text"] {
+  padding: 10px; /* Increase padding */
+  width: 400px; /* Set input field width */
+
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
