@@ -13,6 +13,66 @@
   <title>Dealify</title>
 </head>
 
+<body>
+  <header>
+    <nav class="navbar is-light" role="navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://github.com/HunterBell512/dealify">
+          <img src="./assets/images/eyes.png" width="112" height="28" alt="Dealify">
+        </a>
+      </div>
+      <div id="navbarDealify" class="navbar-menu">
+        <div class="navbar-start">
+          <p id="navbarTitle" class="navbar-item">
+            DEALIFY
+          </p>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item" href="#">
+            RECENTS
+          </a>
+          <a class="navbar-item" href="#">
+            WISHLIST
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content has-text-centered">
+            <h2>Search for a game!</h2>
+            <form class="field has-addons searchform">
+              <div class="control">
+                <input class="input is-rounded" type="text" placeholder="Which game?">
+              </div>
+              <div class="control">
+                <button class="button is-primary is-rounded" type="submit">Search</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>DEALIFY</strong> created by: 
+        <a href="https://github.com/HunterBell512">HunterBell512</a> |  
+        <a href="https://github.com/DanielJutila">DanielJutila</a> | 
+        <a href="https://github.com/CallBeyond">CallBeyond</a> | 
+        <a href="https://github.com/Vermello25">Vermello25</a>
+      </p>
+    </div>
+  </footer>
+  <script src="./assets/js/searchFunction.js"></script>
+  <script src="./assets/js/saveWishlist.js"></script>
+  <script src="./assets/js/endpoints.js"></script>
+</body>
+
   <body>
     <header>
       <h1 class="title is-1 has-text-centered">
@@ -45,20 +105,22 @@
               <input class="input is-rounded" type="text" placeholder="Which game?">
             </div>
             <div class="control">
-              <button class="button is-primary is-rounded" type="submit">Search</button>
+              <button class="button is-primary is-rounded" id="" type="submit">Search</button>
             </div>
           </form>
         </div>
       </div>
+     
+        </div>
     </section>
     <!-- Footer -->
     <footer class="footer">
       <div class="content has-text-centered">
         <p>Authors: HunterBell512, DanielJutila, CallBeyond, Vermello25</p>
-        <button id="contactBtn" onclick="openmodal()">Contact Us</button>
+        <button id="contactBtn" onclick="openContactModal()">Contact Us</button>
         <div class="modal" id="contactModal">
-          <div class="modal-content">
-            <span class="close-modal">&times;</span>
+          <div class="modal-content" id="contactUsContent">
+            <span class="close-modal" id="closeContact" onclick="closeContactModal()">&times;</span>
             <p>Thank You for visiting our website. If you would like to contact us, you can use one of the means below.</p>
             <ul>
               <li><a href="https://github.com/HunterBell512">HunterBell512</a></li>
@@ -66,41 +128,17 @@
               <li><a href="https://github.com/CallBeyond">CallBeyond</a></li>
               <li><a href="https://github.com/Vermello25">Vermello25</a></li>
             </ul>
-        </nav>
-       
-     </header>
+          </div> 
+       </div>
+      </div>
+    </footer>   
     
     <body>
-        <h2>Save money buying games you cheapskates.</h2>
-         <form class="searchform">
-            <input type="text" id="searchbar" placeholder="Search Bar" required>
-            <input type="submit" id="searchbtn" value="Search"></button>
-        </form>
+       
 
-        <footer>
-            <ul>
-                <li>Authors: HunterBell512, DanielJutila, CallBeyond, Vermello25 </li>
-                <!--Was thinking we could do a modal for contact us, have it pop up with each of our contact info and links to our github.-->
-                <li>
-                    <!--I think we should use css to hide the button in the "Contact Us" text.-->
-                    <button id="contactBtn" onclick="openmodal()">Contact Us</button>
-                    <div class="modal" id="contactModal">
-                        <div class="modal-content">
-                            <span class="close-modal">&times;</span>
-                            <p>Thank You for visiting our website. If you would like to contact us you can use one of the means below.</p>
-                            <ul>
-                                <li><a href="https://github.com/HunterBell512">HunterBell512></a></li>
-                                <li><a href="https://github.com/DanielJutila">DanielJutila></a></li>
-                                <li><a href="https://github.com/CallBeyond">CallBeyond</a></li>
-                                <li><a href="https://github.com/Vermello25">Vermello25</a></li>
-                            </ul>
-                        </div>
-                    </div>    
-                </li> 
-            </ul>
-        </footer>
         <script src="./assets/js/searchFunction.js"></script>
         <script src="./assets/js/saveWishlist.js"></script>
         <script src="./assets/js/endpoints.js"></script>
+        <script src="./assets/js/modals.js"></script>
     </body>
 </html>
