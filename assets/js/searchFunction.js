@@ -1,5 +1,5 @@
-var searchBar = document.getElementById('searchbar');
-var searchBtn = document.getElementById('searchbtn');
+var searchBar = document.getElementById('searchBar');
+var searchBtn = document.getElementById('searchBtn');
 
 function searchFunction(event) {
     event.preventDefault();
