@@ -1,103 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="./assets/css/styles.css">
-        <title>Dealify</title>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <title>Dealify</title>
+</head>
 
+<body>
+  <header>
+    <h1 class="title is-1 has-text-centered">
+      DEALIFY
+    </h1>
+    <nav class="menu has-text-right block">
+      <ul class="menu-list">
+        <li><a href="#">Recent Searches</a></li>
+        <li>
+          <button id="wishlistBtn" onclick="openWishlistModal()">Wishlist</button>
+          <div class="modal" id="wishlistModal">
+            <div class="modal-content" id="wishlistContent">
+              <span class="close-wishlist-modal" id="closeWishlist" onclick="closeWishlistModal()">&times;</span>
+              <p>Your saved games.</p>
+            </div>
+          </div>
+        </li>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="section">
+    <div class="container">
+      <div class="content right-aligned">
+        <h2>Save money buying games you cheapskates.</h2>
+        <form class="field has-addons searchform">
+          <div class="control">
+            <input class="input is-rounded" id='searchbar' type="text" placeholder="Which game?">
+          </div>
+          <div class="control">
+            <button class="button is-primary is-rounded" id="searchbtn" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>Authors: HunterBell512, DanielJutila, CallBeyond, Vermello25</p>
+      <button id="contactBtn" onclick="openContactModal()">Contact Us</button>
+      <div class="modal" id="contactModal">
+        <div class="modal-content has-background-light" id="contactUsContent">
+          <span class="close-modal level-right" id="closeContact" onclick="closeContactModal()">&times;</span>
+          <p>Thank You for visiting our website. If you would like to contact us, you can use one of the means below.
+          </p>
+          <dl>
+            <dd><a href="https://github.com/HunterBell512" target="_blank">HunterBell512</a></li>
+            <dd><a href="https://github.com/DanielJutila" target="_blank">DanielJutila</a></li>
+            <dd><a href="https://github.com/CallBeyond" target="_blank">CallBeyond</a></li>
+            <dd><a href="https://github.com/Vermello25" target="_blank">Vermello25</a></li>
+          </dl>
+        </div>
+      </div>
+  </footer>
+  </div>
+  </div>
+  </div>
+  </footer>
   <body>
-    <header>
-      <h1 class="title is-1 has-text-centered">
-        DEALIFY
-      </h1>
-      <nav class="menu has-text-right block">
-        <ul class="menu-list">
-          <li><a href="#">Recent Searches</a></li>
-          <li> 
-            <button id="wishlistBtn" onclick="openWishlistModal()">Wishlist</button>
-            <div class="modal" id="wishlistModal">
-                  <div class="modal-content" id="wishlistContent">
-                    <span class="close-wishlist-modal" id="closeWishlist" onclick="closeWishlistModal()">&times;</span>
-                   <p>Your saved games.</p>
-                  </div>
-                  
-                </div>
-            
-            
-          </li>
-          <li> 
-            <button id="wishlistBtn" onclick="openWishlistModal()">Wishlist</button>
-            <div class="modal" id="wishlistModal">
-                  <div class="modal-content" id="wishlistContent">
-                    <span class="close-wishlist-modal" id="closeWishlist" onclick="closeWishlistModal()">&times;</span>
-                   <p>Your saved games.</p>
-                  </div>
-                  
-                </div>
-            
-            
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section class="section">
-      <div class="container">
-        <div class="content right-aligned">
-          <h2>Save money buying games you cheapskates.</h2>
-          <form class="field has-addons searchform">
-            <div class="control">
-              <input class="input is-rounded" id='searchbar' type="text" placeholder="Which game?">
-            </div>
-            <div class="control">
-              <button class="button is-primary is-rounded" id="searchbtn" type="submit">Search</button>
-            </div>
-          </form>
-        </div>
-      </div>
-     
-        </div>
-      </div>
-     
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>Authors: HunterBell512, DanielJutila, CallBeyond, Vermello25</p>
-        <button id="contactBtn" onclick="openContactModal()">Contact Us</button>
-        <div class="modal" id="contactModal">
-          <div class="modal-content has-background-light" id="contactUsContent">
-            <span class="close-modal level-right" id="closeContact" onclick="closeContactModal()">&times;</span>
-            <p>Thank You for visiting our website. If you would like to contact us, you can use one of the means below.</p>
-            <dl>
-              <dd><a href="https://github.com/HunterBell512" target="_blank">HunterBell512</a></li>
-              <dd><a href="https://github.com/DanielJutila" target="_blank">DanielJutila</a></li>
-              <dd><a href="https://github.com/CallBeyond" target="_blank">CallBeyond</a></li>
-              <dd><a href="https://github.com/Vermello25" target="_blank">Vermello25</a></li>
-            </ul>
-       </div>
-      </div>
-    </footer>   
-          </div> 
-       </div>
-      </div>
-    </footer>   
-    
-    <body>
-       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script
-        src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-        crossorigin="anonymous"
-        ></script>
-        <script src="./assets/js/searchFunction.js"></script>
-        <script src="./assets/js/saveWishlist.js"></script>
-        <script src="./assets/js/endpoints.js"></script>
-        <script src="./assets/js/modals.js"></script>
-    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="./assets/js/endpoints.js"></script>
+    <script src="./assets/js/searchFunction.js"></script>
+    <script src="./assets/js/modals.js"></script>
+    <script src="./assets/js/wishlist.js"></script>
+  </body>
 </html>

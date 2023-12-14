@@ -1,9 +1,9 @@
 let cardContainer = $('<div>');
-
 // function to get game deals from API CheapShark
 async function getGameDeals (search) {
     let url = '';
     let gameData = '';
+    cardContainer.empty();
     cardContainer.addClass('columns is-flex-wrap-wrap');
 
     // find if input was either a string or a number
@@ -56,7 +56,7 @@ async function getGameDeals (search) {
 
         gameCard.data('name', element.external);
         gameCard.append(gameImgDiv, gameMedia, cardContent);
-        gameCard.on('click', SelectGame)
+        gameCard.on('click', SelectGame);
         cardContainer.append(gameCard);
     });
     $('body').append(cardContainer);
@@ -129,5 +129,12 @@ async function getGameInfo (name) {
 function SelectGame () {
     getGameInfo($(this).data('name'))
 }
-
-getGameDeals('batman');
+//This only saves title. Need entire api to be saved but this works.
+$('#searchbtn').click(function(){
+    var searchValue = $('#searchbar').val();
+    if(searchValue.trim()=== ""){
+        console.log('empty');
+    } else{
+        getGameDeals(searchValue);
+    }
+});
