@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <!-- Title -->
   <title>Dealify</title>
   
@@ -53,10 +55,10 @@
           <h2>Save money buying games you cheapskates.</h2>
           <form class="field has-addons searchform">
             <div class="control">
-              <input class="input is-rounded" type="text" placeholder="Which game?">
+              <input class="input is-rounded" id='searchbar' type="text" placeholder="Which game?">
             </div>
             <div class="control">
-              <button class="button is-primary is-rounded" id="" type="submit">Search</button>
+              <button class="button is-primary is-rounded" id="searchbtn" type="submit">Search</button>
             </div>
           </form>
         </div>
