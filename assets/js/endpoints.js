@@ -77,51 +77,54 @@ async function getGameInfo (name) {
     const res = await fetch(url);
     gameData = await res.json();
 
-    // card related elements
-    let gameCard = $('<div>');
-    gameCard.addClass('card column is-4');
-
-    // Came Card info
-    let gameImgDiv = $('<div>')
-    let gameImgFigure = $('<figure>');
-    let gameImage = $('<img>');
-    gameImgDiv.addClass('card-image');
-    gameImgFigure.addClass('image is-4by3');
-    gameImage.attr('src', gameData.background_image);
-    gameImgFigure.append(gameImage);
-    gameImgDiv.append(gameImgFigure);
-
-    let gameMedia = $('<div>');
-    let mediaDiv = $('<div>');
-    let mediaContentDiv = $('<div>');
-    let gameTitle = $('<p>');
-    let gameRelease = $('<p>');
-    gameMedia.addClass('card-content');
-    mediaDiv.addClass('media');
-    mediaContentDiv.addClass('media-content');
-    gameTitle.text(gameData.name);
-    gameRelease.text(dayjs(gameData.released).format('MMM D, YYYY'));
-    mediaContentDiv.append(gameTitle);
-    mediaDiv.append(mediaContentDiv);
-    gameMedia.append(mediaDiv);
-
-    // card info related elements
-    let cardContent = $('<div>');
-    let gameDeal = $('<p>');
-    cardContent.addClass('content columns');
-    gameDeal.addClass('column');
-    gameDeal.text(element.cheapest);
-    cardContent.append(gameDeal);
-
-
+    
+    
     // log the response
     if (res.status === 404) {
         console.log("We couldn't find anymore info on this game...");
     } else {
-        cardContainer.remove();
+        cardContainer.empty();
+        
+        // card related elements
+        let gameCard = $('<div>');
+        gameCard.addClass('card column is-4');
+        
+        // Came Card info
+        let gameImgDiv = $('<div>')
+        let gameImgFigure = $('<figure>');
+        let gameImage = $('<img>');
+        gameImgDiv.addClass('card-image');
+        gameImgFigure.addClass('image is-4by3');
+        gameImage.attr('src', gameData.background_image);
+        gameImgFigure.append(gameImage);
+        gameImgDiv.append(gameImgFigure);
+        
+        let gameMedia = $('<div>');
+        let mediaDiv = $('<div>');
+        let mediaContentDiv = $('<div>');
+        let gameTitle = $('<p>');
+        let gameRelease = $('<p>');
+        gameMedia.addClass('card-content');
+        mediaDiv.addClass('media');
+        mediaContentDiv.addClass('media-content');
+        gameTitle.text(gameData.name);
+        gameRelease.text(dayjs(gameData.released).format('MMM D, YYYY'));
+        mediaContentDiv.append(gameTitle, gameRelease);
+        mediaDiv.append(mediaContentDiv);
+        gameMedia.append(mediaDiv);
+        
+        // card info related elements
+        // let cardContent = $('<div>');
+        // let gameDeal = $('<p>');
+        // cardContent.addClass('content columns');
+        // gameDeal.addClass('column');
+        // gameDeal.text(element.cheapest);
+        // cardContent.append(gameDeal);
 
+        gameCard.append(gameImgDiv, gameMedia);
+        cardContainer.append(gameCard);
     }
-
+    
     console.log(gameData);
     return gameData;
 }
