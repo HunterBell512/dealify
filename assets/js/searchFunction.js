@@ -4,10 +4,6 @@ var searchBtn = document.getElementById('searchbtn');
 function searchFunction(event) {
     event.preventDefault();
 
-    //searchBar.value === what is typed.
-    //gives value of what is searched
-    console.log(searchBar.value);
-
     //Gets the current search history
     var searchHistory = getSearchHistory();
     //adds new searched item to history. Change (searchBar.value)
@@ -22,4 +18,14 @@ function getSearchHistory() {
     var searchHistory = localStorage.getItem('searchHistory');
     return searchHistory ? JSON.parse(searchHistory) : [];
 }
+// Event listener for search button click
 searchBtn.addEventListener("click", searchFunction);
+
+// Event listener for search bar click to show recent searches
+searchBar.addEventListener("click", function() {
+    showRecentSearches();
+});
+
+function showRecentSearches() {
+    
+}
