@@ -38,7 +38,7 @@
         <a class="navbar-item" href="#">
           RECENTS
         </a>
-        <a class="navbar-item" href="#">
+        <a class="navbar-item" href="#" onclick="openWishlistModal()">
           WISHLIST
         </a>
       </div>
@@ -94,6 +94,29 @@
     </div>
   </div>
 </footer>
+
+<!-- Wishlist Modal -->
+<div class="modal" id="wishlistModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Your Wishlist</p>
+      <button class="delete" aria-label="close" onclick="closeWishlistModal()">&times;</button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Wishlist content goes here -->
+      <p>Your wishlist items:</p>
+      <ul id="wishlistItems">
+        <!-- Wishlist items will appear here -->
+      </ul>
+    </section>
+    <footer class="modal-card-foot">
+      <div class="buttons is-centered">
+        <button class="button" onclick="closeWishlistModal()">Close</button>
+      </div>
+    </footer>
+  </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>

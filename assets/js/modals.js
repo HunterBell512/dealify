@@ -20,17 +20,14 @@ var wishlistModal = document.getElementById('wishlistModal');
 var openWishlistModalBtn = document.getElementById('wishlistBtn');
 var closeWishlistModalBtn = document.getElementById('closeWishlist');
 
-// function to open wishlist modal
+
+// Function to open the wishlist modal
 function openWishlistModal() {
-    wishlistModal.style.display = 'flex';
-}
+    $('#wishlistModal').addClass('is-active');
+    
+  }
 
-// function to close wishlist modal
+// Function to close the wishlist modal
 function closeWishlistModal() {
-    wishlistModal.style.display = 'none';
-    wishlistModal.style.backgroundColor = 'none';
-}
-
-// event listeners to open and close wishlist modal
-openWishlistModalBtn.addEventListener('click', openWishlistModal);
-closeWishlistModalBtn.addEventListener('click', closeWishlistModal);
+    $('#wishlistModal').removeClass('is-active');
+  }
