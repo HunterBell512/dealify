@@ -59,7 +59,7 @@ async function getGameDeals (search) {
         gameCard.on('click', SelectGame);
         cardContainer.append(gameCard);
     });
-    $('body').append(cardContainer);
+    $('#search-results').append(cardContainer);
 
     // log the response
     console.log(gameData);
@@ -114,15 +114,15 @@ async function getGameInfo (name) {
         gameMedia.append(mediaDiv);
         
         // card info related elements
-        // let cardContent = $('<div>');
-        // let gameDeal = $('<p>');
-        // cardContent.addClass('content columns');
-        // gameDeal.addClass('column');
-        // gameDeal.text(element.cheapest);
-        // cardContent.append(gameDeal);
+        let gameDescDiv = $('<div>');
+        let gameDesc = $('<p>');
+        gameDescDiv.addClass('columns');
+        gameDesc.addClass('container column is-8');
+        gameDesc.text(gameData.description);
+        gameDescDiv.append(gameDesc);
 
         gameCard.append(gameImgDiv, gameMedia);
-        cardContainer.append(gameCard);
+        cardContainer.append(gameCard, gameDesc);
     }
     
     console.log(gameData);
