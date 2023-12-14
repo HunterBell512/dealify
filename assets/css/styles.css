@@ -28,6 +28,7 @@ nav {
 }
 
 .footer {
+  
   position: fixed;
   left: 0;
   bottom: 0;
@@ -37,9 +38,9 @@ nav {
   color: rgb(0, 0, 0);
   text-align: center;
 }
-.custom-modal {
-  width: 60%; /* Adjust the width as needed */
-  max-width: 600px; /* Optional: Set a maximum width */
-  margin:100px;
-  container: center;
+
+/* Center the close button */
+.modal-card-foot {
+  display: flex;
+  justify-content: center;
 }
