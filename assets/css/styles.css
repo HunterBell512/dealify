@@ -44,3 +44,11 @@ nav {
   display: flex;
   justify-content: center;
 }
+#searchHistory {
+  position: absolute;
+  list-style-type: none;
+  text-align: left;
+  margin-left: 15px;
+  /* Added -1px because there was a 1px gap that would make the history dissapear */
+  margin-top: -1px;
+}
