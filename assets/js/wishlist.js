@@ -6,9 +6,4 @@ $('#wishlistBtn').on('click', function (event) {
     for (var i = 0; i < wishlistItems.length; i++) {
         $("#wishlistContent").append("<p>" + wishlistItems[i] + "</p>");
     }
-    $("#wishlistModal").addClass("is-active");
 });
-
-function closeWishlistModal() {
-    $("#wishlistModal").removeClass("is-active");
-}
