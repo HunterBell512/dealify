@@ -1,4 +1,10 @@
+var selectedGame = {                // Object to store data for wishlist
+    name: "",
+    lastPrice: "",
+    store: ""
+};
 let cardContainer = $('<div>');
+
 // function to get game deals from API CheapShark
 async function getGameDeals (search) {
     let url = '';
@@ -10,7 +16,7 @@ async function getGameDeals (search) {
     if (typeof search === 'string') {
         url = `https://www.cheapshark.com/api/1.0/games?title=${search}`
     } else if (typeof search === 'number') {
-        url = `https://www.cheapshark.com/api/1.0/games?ids=${search}`;
+        url = `https://www.cheapshark.com/api/1.0/games?id=${search}`;
     }
 
     // fetch for data
@@ -55,6 +61,7 @@ async function getGameDeals (search) {
         cardContent.append(gameDeal);
 
         gameCard.data('name', element.external);
+        gameCard.data('gameID', element.gameID);
         gameCard.append(gameImgDiv, gameMedia, cardContent);
         gameCard.on('click', SelectGame);
         cardContainer.append(gameCard);
@@ -76,8 +83,6 @@ async function getGameInfo (name) {
     // fetch for data
     const res = await fetch(url);
     gameData = await res.json();
-
-    
     
     // log the response
     if (res.status === 404) {
@@ -129,8 +134,23 @@ async function getGameInfo (name) {
     return gameData;
 }
 
+async function getGameByID (id) {
+    let url = `https://www.cheapshark.com/api/1.0/games?id=${id}`;
+
+    // fetch for data
+    const res = await fetch(url);
+    const gameData = await res.json();
+
+    selectedGame.name = gameData.title;
+    selectedGame.lastPrice = gameData.deals[0].price;
+    selectedGame.store = storeIDs[gameData.deals[0].storeID];
+
+    console.log(selectedGame)
+}
+
 function SelectGame () {
-    getGameInfo($(this).data('name'))
+    getGameByID($(this).data('gameID'));
+    getGameInfo($(this).data('name'));
 }
 //This only saves title. Need entire api to be saved but this works.
 $('#searchbtn').click(function(){
