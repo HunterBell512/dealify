@@ -94,7 +94,7 @@ async function getGameInfo (name) {
         let gameCard = $('<div>');
         gameCard.addClass('card column is-4');
         
-        // Came Card info
+        // Game Card info
         let gameImgDiv = $('<div>')
         let gameImgFigure = $('<figure>');
         let gameImage = $('<img>');
@@ -106,16 +106,22 @@ async function getGameInfo (name) {
         
         let gameMedia = $('<div>');
         let mediaDiv = $('<div>');
-        let mediaContentDiv = $('<div>');
+        let gameInfoDiv = $('<div>');
         let gameTitle = $('<p>');
         let gameRelease = $('<p>');
+        let priceInfoDiv = $('<div>');
+        let priceInfoImg = $('<img>');
         gameMedia.addClass('card-content');
-        mediaDiv.addClass('media');
-        mediaContentDiv.addClass('media-content');
+        mediaDiv.addClass('columns media');
+        gameInfoDiv.addClass('column media-content');
         gameTitle.text(gameData.name);
         gameRelease.text(dayjs(gameData.released).format('MMM D, YYYY'));
-        mediaContentDiv.append(gameTitle, gameRelease);
-        mediaDiv.append(mediaContentDiv);
+        gameInfoDiv.addClass('column is-3');
+        gameInfoDiv.append(gameTitle, gameRelease);
+        priceInfoDiv.addClass('column is-5');
+        priceInfoImg.attr('src', './assets/images/dummy.png');
+        priceInfoDiv.append(priceInfoImg);
+        mediaDiv.append(gameInfoDiv, priceInfoDiv);
         gameMedia.append(mediaDiv);
         
         // card info related elements
@@ -141,11 +147,9 @@ async function getGameByID (id) {
     const res = await fetch(url);
     const gameData = await res.json();
 
-    selectedGame.name = gameData.title;
+    selectedGame.name = gameData.info.title;
     selectedGame.lastPrice = gameData.deals[0].price;
     selectedGame.store = storeIDs[gameData.deals[0].storeID];
-
-    console.log(selectedGame)
 }
 
 function SelectGame () {
