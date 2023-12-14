@@ -67,20 +67,28 @@
     </section>
     <!-- Footer -->
     <footer class="footer">
-      <div class="content has-text-centered">
-        <p>Authors: HunterBell512, DanielJutila, CallBeyond, Vermello25</p>
-        <button id="contactBtn" onclick="openContactModal()">Contact Us</button>
+      <!-- Main contact us button -->
+      <div class="buttons is-centered">
+        <button class="button" id="contactBtn" onclick="openContactModal()">Contact Us</button>
+      <!-- Modal -->
         <div class="modal" id="contactModal">
-          <div class="modal-content" id="contactUsContent">
-            <span class="close-modal" id="closeContact" onclick="closeContactModal()">&times;</span>
-            <p>Thank You for visiting our website. If you would like to contact us, you can use one of the means below.</p>
-            <ul>
-              <li><a href="https://github.com/HunterBell512">HunterBell512</a></li>
-              <li><a href="https://github.com/DanielJutila">DanielJutila</a></li>
-              <li><a href="https://github.com/CallBeyond">CallBeyond</a></li>
-              <li><a href="https://github.com/Vermello25">Vermello25</a></li>
-            </ul>
+          <div class="modal-background""></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Contact Us</p>
+              <button class="delete" aria-label="close" onclick="closeContactModal()">&times;</button>
+            </header>
+            <section class="modal-card-body">
+              <p>Thank You for visiting our website. If you would like to contact us, you can use one of the means below.</p>
+              <ul>
+                <li><a href="https://github.com/HunterBell512">HunterBell512</a></li>
+                <li><a href="https://github.com/DanielJutila">DanielJutila</a></li>
+                <li><a href="https://github.com/CallBeyond">CallBeyond</a></li>
+                <li><a href="https://github.com/Vermello25">Vermello25</a></li>
+              </ul>
+            </section>
           </div> 
+
        </div>
       </div>
     </footer>   
