@@ -35,16 +35,18 @@
             </p>
           </div>
 
-          <div class="navbar-end">
+          <div class="navbar-end is-flex">
             <a class="navbar-item" href="#">
               RECENTS
             </a>
-            <a class="navbar-item" id="wishlistBtn" href="#">
-              WISHLIST
-            </a>
+            <div class="navbar-item has-text-centered">
+              <button class='button is-light' id="wishlistBtn" onclick="openWishlistModal()">WISHLIST</button>
+              <div class="modal has-background-light" id="wishlistModal">
+                <button class="modal-close" aria-label="close" onclick="closeWishlistModal()"></button>
+                <div class="modal-content" id="wishlistContent">
+                </div>
               </div>
             </div>
-          </div>
           
         </div>
       </nav>
@@ -72,15 +74,15 @@
         <p>Authors: HunterBell512, DanielJutila, CallBeyond, Vermello25</p>
         <button id="contactBtn" onclick="openContactModal()">Contact Us</button>
         <div class="modal" id="contactModal">
-          <div class="modal-content" id="contactUsContent">
+          <div class="modal-content has-background-light" id="contactUsContent">
             <span class="close-modal" id="closeContact" onclick="closeContactModal()">&times;</span>
             <p>Thank You for visiting our website. If you would like to contact us, you can use one of the means below.</p>
-            <ul>
-              <li><a href="https://github.com/HunterBell512">HunterBell512</a></li>
-              <li><a href="https://github.com/DanielJutila">DanielJutila</a></li>
-              <li><a href="https://github.com/CallBeyond">CallBeyond</a></li>
-              <li><a href="https://github.com/Vermello25">Vermello25</a></li>
-            </ul>
+            <dl>
+              <dd><a href="https://github.com/HunterBell512">HunterBell512</a></li>
+              <dd><a href="https://github.com/DanielJutila">DanielJutila</a></li>
+              <dd><a href="https://github.com/CallBeyond">CallBeyond</a></li>
+              <dd><a href="https://github.com/Vermello25">Vermello25</a></li>
+              </dl>
           </div> 
        </div>
       </div>
@@ -93,8 +95,9 @@
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
       ></script>
+      <script src="./assets/js/lookupTable.js"></script>
       <script src="./assets/js/searchFunction.js"></script>
-      <script src="./assets/js/saveWishlist.js"></script>
+      <script src="./assets/js/wishlist.js"></script>
       <script src="./assets/js/endpoints.js"></script>
       <script src="./assets/js/modals.js"></script>
     </body>

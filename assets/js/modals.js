@@ -28,6 +28,7 @@ function openWishlistModal() {
 // function to close wishlist modal
 function closeWishlistModal() {
     wishlistModal.style.display = 'none';
+    wishlistModal.style.backgroundColor = 'none';
 }
 
 // event listeners to open and close wishlist modal
