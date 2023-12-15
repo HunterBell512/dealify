@@ -1,41 +1,62 @@
-/* styles.css */
 
-/* Targeting the h1 with the title class */
-h1.title {
-  color: green; /* Set title color to red */
-  font-size: 3em; /* Adjust font size */
+/* Centering the search form */
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this for the desired height */
+}
+
+nav {
+  background-color: aquamarine;
+  padding: 0;
+  font-size: 13px;
   text-align: center; /* Center-align text */
-  font-family: 'Noto Sans TC', sans-serif;}
-
-/* Styling the navigation menu */
-.menu {
-  text-align: left; /* Align menu items to the right */
+  font-family: 'Noto Sans TC', sans-serif;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.menu-list li {
-  display: inline-block; /* Display menu items inline */
-  margin-right: 15px; /* Add space between menu items */
+#navbarTitle {
+  color: rgb(9, 201, 105);
+  font-size: 36px;
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;  
+  padding: 0;
 }
-
-/* Style the search form */
-.searchform {
-  display: flex; /* Display form items in a row */
-  justify-content: center; /* Center-align form items */
-  margin-top: 20px; /* Add space between header and form */
+.form {
+  align-items: center;
 }
-
-.searchform input[type="text"] {
-  padding: 10px; /* Increase padding */
-  width: 400px; /* Set input field width */
-
-}
-
 .footer {
   position: fixed;
   left: 0;
   bottom: 0;
+  padding: 0.5%;
   width: 100%;
-  background-color: red;
-  color: white;
+  background-color: rgba(228, 228, 228, 0.664);
+  color: rgb(0, 0, 0);
   text-align: center;
+}
+
+/* Center the close button */
+.modal-card-foot {
+  display: flex;
+  justify-content: center;
+}
+#searchHistory {
+  background-color: rgba(228, 228, 228, 0.664);
+  position: absolute;
+  list-style-type: none;
+  text-align: left;
+  margin-left: 10px;
+  padding-right: 2px;
+  /* Added -1px because there was a 1px gap that would make the history dissapear */
+  margin-top: -1px;
+}
+#searchedItemHistory {
+  padding-left:5px;}
+#searchedItemHistory:hover{
+  background-color: rgba(228, 228, 228, 0.664);
+  cursor: pointer;
+}
+#liWishItems{
+  padding-left: 10px;
 }
