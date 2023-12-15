@@ -3,6 +3,7 @@ $(document).ready(function () {
     function searchFunction(event) {
         event.preventDefault();
         let searchBarValue = $('#searchbar').val().trim();
+        $('#games-modal').addClass('is-active');
 
         // Check if the search bar is not empty
         if (searchBarValue !== "") {

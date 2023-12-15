@@ -1,9 +1,12 @@
 var selectedGame = {                // Object to store data for wishlist
     name: "",
     lastPrice: "",
-    store: ""
+    store: "",
+    storeId: ""
 };
 let cardContainer = $('<div>');
+let gamesModal = $('#games-modal-content');
+let searchedGamesContainer = $("#searched-games");
 
 // function to get game deals from API CheapShark
 async function getGameDeals (search) {
@@ -66,7 +69,8 @@ async function getGameDeals (search) {
         gameCard.on('click', SelectGame);
         cardContainer.append(gameCard);
     });
-    $('#search-results').append(cardContainer);
+    gamesModal.append(cardContainer);
+
 
     // log the response
     console.log(gameData);
@@ -79,16 +83,21 @@ async function getGameInfo (name) {
     let gameName = name.replaceAll(/[-+.^:,]/g, '');                                            // Name of searched game with character removed
     let url = `https://api.rawg.io/api/games/${gameName.replaceAll(' ', '-')}?key=${key}`;      // Parsed URL to use in fetch
     let gameData = '';                                                                          // Var to store fetch results
+    let imgData = '';
 
     // fetch for data
-    const res = await fetch(url);
-    gameData = await res.json();
+    const gameRes = await fetch(url);
+    gameData = await gameRes.json();
+
+    const imgRes = await fetch('https://www.cheapshark.com/api/1.0/stores');
+    imgData = await imgRes.json();
     
     // log the response
-    if (res.status === 404) {
+    if (gameRes.status === 404) {
         console.log("We couldn't find anymore info on this game...");
     } else {
-        cardContainer.empty();
+        searchedGamesContainer.empty();
+        $('#games-modal').removeClass('is-active');
         
         // card related elements
         let gameCard = $('<div>');
@@ -116,24 +125,26 @@ async function getGameInfo (name) {
         gameInfoDiv.addClass('column media-content');
         gameTitle.text(gameData.name);
         gameRelease.text(dayjs(gameData.released).format('MMM D, YYYY'));
-        gameInfoDiv.addClass('column is-3');
+        gameInfoDiv.addClass('column is-6');
         gameInfoDiv.append(gameTitle, gameRelease);
-        priceInfoDiv.addClass('column is-5');
-        priceInfoImg.attr('src', './assets/images/dummy.png');
+        priceInfoDiv.addClass('column is-3');
+        priceInfoImg.attr('src', `https://www.cheapshark.com${imgData[selectedGame.storeID - 1].images.logo}`);
+        priceInfoImg.css({"height": "60", "width": "60"});
         priceInfoDiv.append(priceInfoImg);
         mediaDiv.append(gameInfoDiv, priceInfoDiv);
         gameMedia.append(mediaDiv);
         
         // card info related elements
         let gameDescDiv = $('<div>');
-        let gameDesc = $('<p>');
-        gameDescDiv.addClass('columns');
-        gameDesc.addClass('container column is-8');
-        gameDesc.text(gameData.description);
-        gameDescDiv.append(gameDesc);
+        let gameDesc = new DOMParser().parseFromString(gameData.description, 'text/html');
+        console.log(gameDesc.body);
+        gameDescDiv.addClass('column');
+        // gameDesc.addClass('container column is-8');
+        // gameDesc.text(gameData.description);
+        gameDescDiv.append(gameDesc.body);
 
         gameCard.append(gameImgDiv, gameMedia);
-        cardContainer.append(gameCard, gameDesc);
+        searchedGamesContainer.append(gameCard, gameDescDiv);
     }
     
     console.log(gameData);
@@ -150,11 +161,12 @@ async function getGameByID (id) {
     selectedGame.name = gameData.info.title;
     selectedGame.lastPrice = gameData.deals[0].price;
     selectedGame.store = storeIDs[gameData.deals[0].storeID];
+    selectedGame.storeID = gameData.deals[0].storeID;
 }
 
 function SelectGame () {
     getGameByID($(this).data('gameID'));
-    getGameInfo($(this).data('name'));
+    getGameInfo($(this).data('name'), $(this).data('gameID'));
 }
 //This only saves title. Need entire api to be saved but this works.
 $('#searchbtn').click(function(){

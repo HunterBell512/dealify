@@ -31,3 +31,7 @@ function openWishlistModal() {
 function closeWishlistModal() {
     $('#wishlistModal').removeClass('is-active');
   }
+
+function closeGamesModal () {
+  $('#games-modal').removeClass('is-active');
+}
