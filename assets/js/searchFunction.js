@@ -46,13 +46,11 @@ $(document).ready(function () {
                     event.stopPropagation();
                     $("#searchbar").val(item);
                 });
-                s
             }, 75);
             //shows history
             searchContainer.show();
         });
     });
-
 
     //closes history tab
     $(document).click(function (event) {
@@ -63,5 +61,3 @@ $(document).ready(function () {
 
 
 });
-
-//I hope I can remember how this works tomorrow.
