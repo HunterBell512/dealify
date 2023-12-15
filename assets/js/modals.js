@@ -24,7 +24,6 @@ var closeWishlistModalBtn = document.getElementById('closeWishlist');
 // Function to open the wishlist modal
 function openWishlistModal() {
     $('#wishlistModal').addClass('is-active');
-    
   }
 
 // Function to close the wishlist modal

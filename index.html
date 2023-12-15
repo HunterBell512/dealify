@@ -35,7 +35,7 @@
         </p>
       </div>
       <div class="navbar-end">
-        <a class="navbar-item" href="#" onclick="openWishlistModal()">
+        <a class="navbar-item" id="openingWishlist" onclick="openWishlistModal()">
           WISHLIST
         </a>
       </div>
@@ -84,7 +84,7 @@
         </section>
         <footer class="modal-card-foot">
           <div class="buttons is-centered">
-            <button class="button" onclick="closeContactModal()">Close</button>
+            <button class="button" id="closeContact" onclick="closeContactModal()">Close</button>
           </div>
         </footer>
       </div>
@@ -98,7 +98,7 @@
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">Your Wishlist</p>
-      <button class="delete" onclick="closeWishlistModal()">&times;</button>
+      <button class="delete" id="onclick=" onclick="closeWishlistModal()">&times;</button>
     </header>
     <section class="modal-card-body">
       <!-- Wishlist content goes here -->
@@ -109,7 +109,7 @@
     </section>
     <footer class="modal-card-foot">
       <div class="buttons is-centered">
-        <button class="button" onclick="closeWishlistModal()">Close</button>
+        <button class="button" id="wishlistBtn" onclick="closeWishlistModal()">Close</button>
       </div>
     </footer>
   </div>

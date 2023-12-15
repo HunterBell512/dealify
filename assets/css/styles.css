@@ -22,13 +22,10 @@ nav {
   font-family: 'IBM Plex Sans Thai Looped', sans-serif;  
   padding: 0;
 }
-
 .form {
   align-items: center;
 }
-
 .footer {
-  
   position: fixed;
   left: 0;
   bottom: 0;
@@ -59,5 +56,7 @@ nav {
 #searchedItemHistory:hover{
   background-color: rgba(228, 228, 228, 0.664);
   cursor: pointer;
-
+}
+#liWishItems{
+  padding-left: 10px;
 }
