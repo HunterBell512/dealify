@@ -43,8 +43,8 @@
   </nav>
 </header>
 
-<section class="section">
-  <div class="container">
+<section class="section columns">
+  <div class="container column is-3">
     <div class="content right-aligned">
       <h2>Save money buying games you cheapskates.</h2>
       <form class="field has-addons searchform">
@@ -57,6 +57,22 @@
           <button class="button is-primary is-rounded" id="searchbtn" type="submit">Search</button>
         </div>
       </form>
+    </div>
+  </div>
+  <div id="searched-games" class="column"></div>
+  <div id="games-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Did you mean:</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section id="games-modal-content" class="modal-card-body">
+        <!-- Content ... -->
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button" onclick="closeGamesModal()">Cancel</button>
+      </footer>
     </div>
   </div>
 </section>
@@ -121,6 +137,7 @@
 <script src="./assets/js/wishlist.js"></script>
 <script src="./assets/js/endpoints.js"></script>
 <script src="./assets/js/modals.js"></script>
+<script src="./assets/js/lookupTable.js"></script>
 </body>
 
 </html>
