@@ -4,13 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust this for the desired height */
+  
+  height: 800px; 
 }
 
 nav {
-  background-color: aquamarine;
-  padding: 0;
-  font-size: 13px;
+  font-size: 18px;
   text-align: center; /* Center-align text */
   font-family: 'Noto Sans TC', sans-serif;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);

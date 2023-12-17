@@ -15,22 +15,31 @@ The site is dedicated to helping users quickly find the most cost-effective deal
 
  
 ## Link To Website
-[Click here to be re-directed and save some money!](https://hunterbell512.github.io/dealify/ "Click here to generate a password!")
+[Click here to be re-directed and save some money!](https://hunterbell512.github.io/dealify/)
 
 ## Usage
 1. Click the search bar and search for a game title (i.e Batman)
 2. Click the deal shown
-3. Game page will load and give a brief description along with the 
+3. Game page will load and give a brief description along with a logo of the store that has the cheapest price currently available. 
 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./assets/images/mainpage.png)
+![App Screenshot](./assets/images/batman.png)
+![App Screenshot](./assets/images/gamepage.png)
 
 
 ## Credits
 
 UofM-VIRT-FSF-PT-10-2023-U-LOLC-ENTG
+
+[Bulma](https://bulma.io/)
+
+[OpenCriticAPI](https://app.swaggerhub.com/apis-docs/OpenCritic/OpenCritic-API/1.0.0#/)
+
+[RAWG Video Game Database](https://rapidapi.com/accujazz/api/rawg-video-games-database/details)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
