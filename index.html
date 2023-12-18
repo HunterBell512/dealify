@@ -101,13 +101,11 @@
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Your Wishlist</p>
+      <p class="modal-card-title">Your Wishlist:</p>
       <button class="delete" id="onclick=" onclick="closeWishlistModal()">&times;</button>
     </header>
     <section class="modal-card-body">
-      <p>Your wishlist items:</p>
-      <ul id="wishlistItems">
-      </ul>
+      <div id="wishlistItems"></div>
     </section>
     <footer class="modal-card-foot">
       <div class="buttons is-centered">
@@ -123,7 +121,7 @@
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">Did you mean:</p>
-      <button class="delete" aria-label="close"></button>
+      <button class="delete" onclick="closeGamesModal()" aria-label="close"></button>
     </header>
     <section id="games-modal-content" class="modal-card-body">
     </section>
