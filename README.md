@@ -20,7 +20,7 @@ The site is dedicated to helping users quickly find the most cost-effective deal
 ## Usage
 1. Click the search bar and search for a game title (i.e Batman)
 2. Click the deal shown
-3. Game page will load and give a brief description along with a logo of the store that has the cheapest price currently available. 
+3. Game page will load and give a brief description along with details of the cheapest price currently available. 
 
 
 ## Screenshots
