@@ -45,8 +45,8 @@
   </nav>
 </header>
 
-<section class="section columns">
-  <div class="container column is-3">
+<section class="is-align-items-center columns mx-6 my-6 is-centered is-flex-direction-row-tablet-only">
+  <div class="column is-3-desktop is-6-tablet is-12-mobile">
     <div class="content right-aligned">
       <h2>Save money buying games you cheapskates.</h2>
       <form class="field has-addons searchform">
@@ -61,22 +61,9 @@
       </form>
     </div>
   </div>
-  <div id="searched-games" class="column"></div>
-  <div id="games-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Did you mean:</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section id="games-modal-content" class="modal-card-body">
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button" onclick="closeGamesModal()">Cancel</button>
-      </footer>
-    </div>
-  </div>
+  <div id="searched-games" class="is-align-items-center is-8-desktop is-6-tablet is-12-mobile columns"></div>
 </section>
+<section class="section is-size-1">MORE FEATURES COMING DOWN HERE SOON!</section>
 <!-- Footer -->
 <footer class="footer">
   <!-- Main contact us button -->
@@ -126,6 +113,22 @@
       <div class="buttons is-centered">
         <button class="button" id="wishlistBtn" onclick="closeWishlistModal()">Close</button>
       </div>
+    </footer>
+  </div>
+</div>
+
+<!-- Searched Game Modal -->
+<div id="games-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Did you mean:</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section id="games-modal-content" class="modal-card-body">
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" onclick="closeGamesModal()">Cancel</button>
     </footer>
   </div>
 </div>

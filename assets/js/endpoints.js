@@ -78,16 +78,21 @@ async function getGameDeals (search) {
 }
 
 // function to get game information from API RAWG
-async function getGameInfo (name) {
+async function getGameInfo (name, id) {
     let key = '88c319ac8d934bfc9278191a57ae1fe4';                                               // API KEY for RAWG
     let gameName = name.replaceAll(/[-+.^:,]/g, '');                                            // Name of searched game with character removed
     let url = `https://api.rawg.io/api/games/${gameName.replaceAll(' ', '-')}?key=${key}`;      // Parsed URL to use in fetch
     let gameData = '';                                                                          // Var to store fetch results
     let imgData = '';
+    let scoreData = '';
 
     // fetch for data
     const gameRes = await fetch(url);
     gameData = await gameRes.json();
+
+    const storeRes = await fetch(`https://www.cheapshark.com/api/1.0/games?id=${id}`);
+    storeData = await storeRes.json();
+    console.log(storeData);
 
     const imgRes = await fetch('https://www.cheapshark.com/api/1.0/stores');
     imgData = await imgRes.json();
@@ -101,7 +106,7 @@ async function getGameInfo (name) {
         
         // card related elements
         let gameCard = $('<div>');
-        gameCard.addClass('card column is-4');
+        gameCard.addClass('card column is-4-desktop');
         
         // Game Card info
         let gameImgDiv = $('<div>')
@@ -118,27 +123,41 @@ async function getGameInfo (name) {
         let gameInfoDiv = $('<div>');
         let gameTitle = $('<p>');
         let gameRelease = $('<p>');
-        let priceInfoDiv = $('<div>');
-        let priceInfoImg = $('<img>');
+        let metaScore = $('<p>');
+        let retail = $('<p>');
+        let price = $('<p>');
+        let store = $('<p>');
+        let storeImgDiv = $('<div>');
+        let storeImg = $('<img>');
         gameMedia.addClass('card-content');
         mediaDiv.addClass('columns media');
         gameInfoDiv.addClass('column media-content');
         gameTitle.text(gameData.name);
+        gameTitle.prepend('<span class="has-text-weight-bold">Title: </span>');
         gameRelease.text(dayjs(gameData.released).format('MMM D, YYYY'));
-        gameInfoDiv.addClass('column is-6');
-        gameInfoDiv.append(gameTitle, gameRelease);
-        priceInfoDiv.addClass('column is-3');
-        priceInfoImg.attr('src', `https://www.cheapshark.com${imgData[selectedGame.storeID - 1].images.logo}`);
-        priceInfoImg.css({"height": "60", "width": "60"});
-        priceInfoDiv.append(priceInfoImg);
-        mediaDiv.append(gameInfoDiv, priceInfoDiv);
+        gameRelease.prepend('<span class="has-text-weight-bold">Release: </span>');
+        metaScore.text(gameData.metacritic);
+        metaScore.prepend('<span class="has-text-weight-bold">Meta Score: </span>');
+        retail.text(storeData.deals[0].retailPrice);
+        retail.prepend('<span class="has-text-weight-bold">Retail Price: </span>');
+        price.text(`${storeData.deals[0].price} (-${Math.floor(storeData.deals[0].savings)}%)`);
+        price.prepend('<span class="has-text-weight-bold">Best Deal: </span>');
+        store.text(storeIDs[storeData.deals[0].storeID]);
+        store.prepend('<span class="has-text-weight-bold">Store: </span>');
+        gameInfoDiv.addClass('column is-8-desktop');
+        gameInfoDiv.append(gameTitle, gameRelease, metaScore, retail, price, store);
+        storeImgDiv.addClass('column is-4-desktop');
+        storeImg.attr('src', `https://www.cheapshark.com${imgData[selectedGame.storeID - 1].images.logo}`);
+        storeImg.css({"height": "100", "width": "100"});
+        storeImgDiv.append(storeImg);
+        mediaDiv.append(gameInfoDiv, storeImgDiv);
         gameMedia.append(mediaDiv);
         
         // card info related elements
         let gameDescDiv = $('<div>');
         let gameDesc = new DOMParser().parseFromString(gameData.description, 'text/html');
         console.log(gameDesc.body);
-        gameDescDiv.addClass('column');
+        gameDescDiv.addClass('column is-8-desktop is-12-tablet is-12-mobile');
         // gameDesc.addClass('container column is-8');
         // gameDesc.text(gameData.description);
         gameDescDiv.append(gameDesc.body);
