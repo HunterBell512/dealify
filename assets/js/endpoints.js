@@ -1,8 +1,9 @@
-var selectedGame = {                // Object to store data for wishlist
+let searchedGame = {                // Object to store data for wishlist
     name: "",
     lastPrice: "",
     store: "",
-    storeId: ""
+    storeId: "",
+    gameImg: ""
 };
 let cardContainer = $('<div>');
 let gamesModal = $('#games-modal-content');
@@ -31,6 +32,7 @@ async function getGameDeals (search) {
         // card related elements
         let gameCard = $('<div>');
         gameCard.addClass('card column is-4');
+        gameCard.css('cursor', 'pointer');
 
         // card image related elements
         let gameImgDiv = $('<div>')
@@ -51,6 +53,7 @@ async function getGameDeals (search) {
         mediaDiv.addClass('media');
         mediaContentDiv.addClass('media-content');
         gameTitle.text(element.external);
+        gameTitle.addClass('is-centered');
         mediaContentDiv.append(gameTitle);
         mediaDiv.append(mediaContentDiv);
         gameMedia.append(mediaDiv);
@@ -58,9 +61,9 @@ async function getGameDeals (search) {
         // card info related elements
         let cardContent = $('<div>');
         let gameDeal = $('<p>');
-        cardContent.addClass('content columns');
-        gameDeal.addClass('column');
-        gameDeal.text(element.cheapest);
+        cardContent.addClass('content is-centered');
+        gameDeal.addClass('has-text-weight-bold');
+        gameDeal.text('Current Deal: $' + element.cheapest);
         cardContent.append(gameDeal);
 
         gameCard.data('name', element.external);
@@ -144,10 +147,10 @@ async function getGameInfo (name, id) {
         price.prepend('<span class="has-text-weight-bold">Best Deal: </span>');
         store.text(storeIDs[storeData.deals[0].storeID]);
         store.prepend('<span class="has-text-weight-bold">Store: </span>');
-        gameInfoDiv.addClass('column is-8-desktop');
+        gameInfoDiv.addClass('column is-8-desktop is-8-mobile');
         gameInfoDiv.append(gameTitle, gameRelease, metaScore, retail, price, store);
-        storeImgDiv.addClass('column is-4-desktop');
-        storeImg.attr('src', `https://www.cheapshark.com${imgData[selectedGame.storeID - 1].images.logo}`);
+        storeImgDiv.addClass('column is-4-desktop is-4-mobile');
+        storeImg.attr('src', `https://www.cheapshark.com${imgData[searchedGame.storeID - 1].images.logo}`);
         storeImg.css({"height": "100", "width": "100"});
         storeImgDiv.append(storeImg);
         mediaDiv.append(gameInfoDiv, storeImgDiv);
@@ -162,8 +165,20 @@ async function getGameInfo (name, id) {
         // gameDesc.text(gameData.description);
         gameDescDiv.append(gameDesc.body);
 
-        gameCard.append(gameImgDiv, gameMedia);
+        let gameCardFooter = $('<footer>');
+        gameCardFooter.addClass('card-footer');
+        let wishlistButton = $('<button>');
+        wishlistButton.addClass('button card-footer-item');
+        wishlistButton.text('Add to Wishlist')
+        wishlistButton.on('click', function () {
+            let selectedGame = Object.assign({}, searchedGame);
+            wishlistGame(selectedGame);
+        });
+        gameCardFooter.append(wishlistButton);
+
+        gameCard.append(gameImgDiv, gameMedia, gameCardFooter);
         searchedGamesContainer.append(gameCard, gameDescDiv);
+        searchedGame.gameImg = gameData.background_image;
     }
     
     console.log(gameData);
@@ -177,10 +192,10 @@ async function getGameByID (id) {
     const res = await fetch(url);
     const gameData = await res.json();
 
-    selectedGame.name = gameData.info.title;
-    selectedGame.lastPrice = gameData.deals[0].price;
-    selectedGame.store = storeIDs[gameData.deals[0].storeID];
-    selectedGame.storeID = gameData.deals[0].storeID;
+    searchedGame.name = gameData.info.title;
+    searchedGame.lastPrice = gameData.deals[0].price;
+    searchedGame.store = storeIDs[gameData.deals[0].storeID];
+    searchedGame.storeID = gameData.deals[0].storeID;
 }
 
 function SelectGame () {
